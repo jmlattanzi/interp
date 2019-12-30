@@ -2,38 +2,40 @@ package ast
 
 import "github.com/jmlattanzi/interp/token"
 
-// Node is needed by all of our interfaces
+// Node : A single node that implements the TokenLiteral method
 type Node interface {
 	TokenLiteral() string
 }
 
-// Statement is the structure of a statement
+// Statement : The defining structure for a Statement, such as a LET statement.
+// A statement needs to implement everything from Node as well as the statementNode() function.
 type Statement interface {
 	Node
 	statementNode()
 }
 
-// Expression is the structure of our expression
+// Expression : The defining structure for an Expression, such as `x + y`.
+// An expression needs to implement everything from Node as well as the expressionNode() function.
 type Expression interface {
 	Node
 	expressionNode()
 }
 
-// Program consists of a list of statements
+// Program : A program is a list of statements and expressions parsed from source code.
 type Program struct {
 	Statements []Statement
 }
 
-// TokenLiteral returns the token literal of the expression
+// TokenLiteral : If the amount of parsed statements is greater than 0,
+// return the TokenLiteral of the statement. Otherwise return an empty string.
 func (p *Program) TokenLiteral() string {
 	if len(p.Statements) > 0 {
 		return p.Statements[0].TokenLiteral()
-	} else {
-		return ""
 	}
+	return ""
 }
 
-// LetStatement is the structure of a let statment
+// LetStatement : The structure of a LET statement. Contains the token, name, and value of the statement.
 type LetStatement struct {
 	Token token.Token
 	Name  *Identifier

@@ -3,18 +3,20 @@ package main
 import (
 	"fmt"
 	"os"
-	"os/user"
 
 	"github.com/jmlattanzi/interp/repl"
 )
 
 func main() {
-	user, err := user.Current()
-	if err != nil {
-		panic(err)
-	}
+	// user, err := user.Current()
+	// if err != nil {
+	// 	panic(err)
+	// }
 
-	fmt.Println("Stop right there criminal scum!")
-	fmt.Println("sup, " + user.Username)
+	fmt.Println("----\nStop right there, criminal scum! You have violated the law!")
+	fmt.Println("Pay the court a fine or serve your sentence.")
+	fmt.Println("Your stolen goods are now forfeit.")
+	fmt.Println("----")
+	fmt.Println()
 	repl.Start(os.Stdin, os.Stdout)
 }

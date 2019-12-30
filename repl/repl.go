@@ -10,10 +10,20 @@ import (
 	"github.com/jmlattanzi/interp/lexer"
 )
 
-// PROMPT is what we are prompted with
-const PROMPT = "8==D "
+/*
 
-// Start creates a new REPL instance
+The REPL
+
+The REPL (Read Evaluate Print Loop) takes input and processes it as it is submitted.
+Our REPL here is simple. We scan buffered input, pass it to an instance of our Lexer,
+and output the generated tokens to standard out.
+
+*/
+
+// PROMPT : The string we are prompted with to enter a command
+const PROMPT = "¯\\_(ツ)_/¯ >> "
+
+// Start : Starts the REPL and creates a new scanner. Takes an io.Reader and an io.Writer.
 func Start(in io.Reader, out io.Writer) {
 	scanner := bufio.NewScanner(in)
 

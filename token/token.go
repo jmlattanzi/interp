@@ -11,6 +11,7 @@ type Token struct {
 	Literal string    // the actual character itself
 }
 
+// A list of contants that is essentially an enum
 const (
 	ILLEGAL = "ILLEGAL"
 	EOF     = "EOF"
@@ -27,9 +28,9 @@ const (
 	MINUS    = "-"
 	SLASH    = "/"
 
-	GT = ">"
-	LT = "<"
-	EQ = "=="
+	GT     = ">"
+	LT     = "<"
+	EQ     = "=="
 	NOT_EQ = "!="
 
 	// delimiters
@@ -51,6 +52,8 @@ const (
 	RETURN   = "RETURN"
 )
 
+// Keywords are special words reserved for the interpreter and not
+// to be used in a variable name
 var keywords = map[string]TokenType{
 	"fn":     FUNCTION,
 	"let":    LET,
@@ -61,7 +64,8 @@ var keywords = map[string]TokenType{
 	"return": RETURN,
 }
 
-// LookupIdentifier finds the keyword used in our keyword map
+// LookupIdentifier : This function checks if the input is a reserved word,
+// if it isn't, we assum that it's an IDENT
 func LookupIdentifier(ident string) TokenType {
 	if tok, ok := keywords[ident]; ok {
 		return tok
