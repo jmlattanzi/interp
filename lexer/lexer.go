@@ -5,7 +5,7 @@ import "github.com/jmlattanzi/interp/token"
 
 /*
 
-The Lexer
+Lexer
 
 Also known as the tokenizer, takes in string input and turns it into a series of
 identifiable objects, or tokens.

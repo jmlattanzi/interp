@@ -27,6 +27,7 @@ const PROMPT = "¯\\_(ツ)_/¯ >> "
 func Start(in io.Reader, out io.Writer) {
 	scanner := bufio.NewScanner(in)
 
+	// while the program is running....
 	for {
 		fmt.Print(PROMPT)
 		scanned := scanner.Scan()

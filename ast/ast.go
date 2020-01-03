@@ -2,6 +2,16 @@ package ast
 
 import "github.com/jmlattanzi/interp/token"
 
+/*
+
+AST (Abstract Syntax Tree)
+
+The AST is used to turn parsed/tokenized input into individual expressions and statements.
+A combination of statements and expressions make up a program. That array of statements and expressions
+is ultimately evaluated.
+
+*/
+
 // Node : A single node that implements the TokenLiteral method
 type Node interface {
 	TokenLiteral() string

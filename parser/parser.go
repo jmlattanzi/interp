@@ -39,7 +39,7 @@ func New(l *lexer.Lexer) *Parser {
 
 // ParseProgram : Parses the program into a slice of statements.
 // First, we create a new, empty instance of `ast.Program{}` and set the
-// program's statements to be an empty slice of `ast.Statement`
+// program's statements to be an empty slice of `ast.Statement`.
 // While the current token is not of the type `EOF`, the current statement is parsed
 // via the `parseStatement` function. The returned statement is appened to the
 // programs statements and the `nextToken()` is called.
