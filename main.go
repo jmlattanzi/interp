@@ -13,10 +13,16 @@ func main() {
 	// 	panic(err)
 	// }
 
-	fmt.Println("----\nStop right there, criminal scum! You have violated the law!")
+	printWelcome()
+	repl.Start(os.Stdin, os.Stdout)
+}
+
+// printWelcome : Prints the welcome message.
+func printWelcome() {
+	fmt.Println("\n----")
+	fmt.Println("Stop right there, criminal scum! You have violated the law!")
 	fmt.Println("Pay the court a fine or serve your sentence.")
 	fmt.Println("Your stolen goods are now forfeit.")
 	fmt.Println("----")
 	fmt.Println()
-	repl.Start(os.Stdin, os.Stdout)
 }

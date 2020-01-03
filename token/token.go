@@ -1,6 +1,6 @@
 package token
 
-// TokenType is basically the enum value
+// TokenType : Essentially an enum value that's mapped up to the constants below
 type TokenType string
 
 // Token is the definition of what a token is
@@ -17,7 +17,7 @@ const (
 	EOF     = "EOF"
 
 	// Indentifiers & literals
-	IDENT = "IDENT" // add, foobar, x, y
+	IDENT = "IDENT"
 	INT   = "INT"
 
 	// operators
@@ -27,11 +27,10 @@ const (
 	ASTERISK = "*"
 	MINUS    = "-"
 	SLASH    = "/"
-
-	GT     = ">"
-	LT     = "<"
-	EQ     = "=="
-	NOT_EQ = "!="
+	GT       = ">"
+	LT       = "<"
+	EQ       = "=="
+	NOT_EQ   = "!="
 
 	// delimiters
 	COMMA     = ","

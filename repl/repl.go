@@ -38,9 +38,14 @@ func Start(in io.Reader, out io.Writer) {
 		line := scanner.Text()
 		l := lexer.New(line)
 
+		// p := parser.New(l)
+		// output := p.ParseProgram()
+		// fmt.Println(output.Statements)
+
 		for tok := l.NextToken(); tok.Type != token.EOF; tok = l.NextToken() {
 			fmt.Printf("%+v\n", tok)
 		}
+
 	}
 
 }
