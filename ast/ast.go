@@ -45,6 +45,14 @@ func (p *Program) TokenLiteral() string {
 	return ""
 }
 
+type ReturnStatement struct {
+	Token       token.Token
+	ReturnValue Expression
+}
+
+func (rs *ReturnStatement) statementNode()       {}
+func (rs *ReturnStatement) TokenLiteral() string { return rs.Token.Literal }
+
 // LetStatement : The structure of a LET statement. Contains the token, name, and value of the statement.
 type LetStatement struct {
 	Token token.Token
